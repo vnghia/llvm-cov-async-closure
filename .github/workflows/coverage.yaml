@@ -26,6 +26,10 @@ jobs:
           toolchain: ${{ steps.toolchain.outputs.channel }}
       - uses: cargo-bins/cargo-binstall@main
 
+      - name: Setup LLVM
+        uses: ZhongRuoyu/setup-llvm@v0
+        with:
+          llvm-version: 19
       - name: Install cargo-llvm-cov
         uses: taiki-e/install-action@cargo-llvm-cov
       - name: Generate code coverage
