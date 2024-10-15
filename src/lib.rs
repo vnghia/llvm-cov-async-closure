@@ -1,6 +1,6 @@
 #![feature(async_closure)]
 
-use futures_lite::{stream, StreamExt};
+use futures::{stream, StreamExt};
 
 async fn test_async_closure() -> Vec<i32> {
     stream::iter(0..3).then(async |i| i).collect().await
